@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>numbers</title>
+</head>
+<body>
+<h1>Enter the number</h1>
+<input type="number">
+<h1>Enter the gmail</h1>
+<input type="text" pattern="^[a-zA-Z0-9]+gmail\.com$" required>
+<h1>click the button to create another</h1>
+<button id="new button" onclick="create(this)" data-counter="1">click</button>
+<script>
+function create(elm) {
+  var counter = parseInt(elm.getAttribute('data-counter'));
+  var button = document.createElement('button');
+  button.innerText = elm.id;
+  button.id = elm.id + '_' + counter;
+  button.setAttribute('data-counter', '1');
+  button.setAttribute('onclick','create(this)');
+  document.body.appendChild(button);
+  elm.setAttribute('data-counter', ++counter)
+}
+</script>
+
+</body>
+</html>
