@@ -14,7 +14,7 @@ function create(elm) {
   var counter = parseInt(elm.getAttribute('data-counter'));
   var button = document.createElement('button');
   button.innerText = elm.id;
-  button.id = elm.id + '_' + counter;
+  button.id = elm.id;
   button.setAttribute('data-counter', '1');
   button.setAttribute('onclick','create(this)');
   document.body.appendChild(button);
