@@ -1,0 +1,32 @@
+#Testcase 1
+#Input:20
+#output:AABBC
+
+#Testcase 2
+#Input:370
+#output:ABBBE
+
+#python program
+
+a=int(input())
+c=a
+temp=1
+e=''
+m=0
+list1=[]
+for i in range(2,27):
+    list1.append(temp)
+    temp=i*(temp)+temp
+for i in range(0,len(list1)):
+    if a<list1[i]:
+        m=i-1;
+        break
+n=65+m
+while(m>=0):
+    while(list1[m]<=c):
+        c=c-list1[m]
+        d=n
+        e+=chr(d)
+    n=n-1
+    m=m-1
+print(e[::-1])
